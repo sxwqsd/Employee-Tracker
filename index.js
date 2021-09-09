@@ -7,12 +7,12 @@ const connection = mysql.createConnection({
     port: 3000,
     user: "root",
     password: "password",
-    database: "employee-trackerDB"
+
+    database: "employee_trackerDB"
 });
 
-connection.connect(function (err) {
-    if (err) throw err
-    console.log("connected as id" + connection.threadId)
+connection.connect(function() {
+    console.log("connected as id" + connection.threadId);
     startApp();
 });
 
@@ -123,8 +123,7 @@ function addDepart() {
                 {
                     name: res.name
                 },
-                function (err) {
-                    if (err) throw err
+                function () {
                     console.table(res);
                     startPrompt();
                 }
@@ -135,7 +134,7 @@ function addDepart() {
 };
 
 function addRole() {
-    connection.query("SELECT role.name AS name, role.salary AS salary FROM role", function (err, res) {
+    connection.query("SELECT role.name AS name, role.salary AS salary FROM role", function (res) {
         inquirer.prompt(roleQuest)
             .then(function (res) {
                 connection.query(
@@ -144,8 +143,8 @@ function addRole() {
                         name: res.name,
                         salary: res.salary,
                     },
-                    function (err) {
-                        if (err) throw err
+                    function () {
+                        
                         console.table(res);
                         startPrompt();
                     })
@@ -166,8 +165,7 @@ function addEmployee(){
           manager_id: managerId,
           role_id: roleId
           
-      }, function(err){
-          if (err) throw err
+      }, function(){
           console.table(val)
           startPrompt()
       })

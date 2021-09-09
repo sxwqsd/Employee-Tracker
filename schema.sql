@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS employee-trackerDB;
-CREATE DATABASE employee-trackerDB;
-USE employee-trackerDB;
+DROP DATABASE IF EXISTS employee_trackerDB;
+CREATE DATABASE employee_trackerDB;
+USE employee_trackerDB;
 
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -25,49 +25,43 @@ id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 
 /*Department*/
 INSERT INTO department (name)
-VALUE ("");
+VALUE ("Engineering");
 INSERT INTO department (name)
-VALUE ("");
+VALUE ("Accounting");
 INSERT INTO department (name)
-VALUE ("");
-INSERT INTO department (name)
-VALUE ("");
+VALUE ("Managment");
+
 
 /*Roles*/
 INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
+VALUE ("Sr. Engineer", 80000, 1);
 INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
+VALUE ("Jr. Engineer", 60000, 1);
 INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
+VALUE ("Architect", 70000, 1);
 INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
+VALUE ("Math Guy", 75000, 2);
 INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
+VALUE ("Other Math GUy", 65000, 2);
 INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
+VALUE ("Regional Manager", 120000, 3);
 INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
-INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
-INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
-INSERT INTO role (title, salary, department_id) 
-VALUE ("", ,);
+VALUE ("Assistant to the Regional Manager", 100000, 3);
+
 
 /*Employees*/
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("", "", null, );
+VALUE ("James", "Bond", null, 1);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("", "", null, );
+VALUE ("Jim", "Halpert", null, 2);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("", "", null, );
+VALUE ("Pam", "Halpert", null, 3);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("", "", null, );
+VALUE ("Dwight", "Schrute", 6, 4);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("", "", null, );
+VALUE ("David", "Mackelmore", 6, 5);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("", "", null, );
+VALUE ("Beep", "Boop", 6, 6);
 
 SELECT * FROM department;
 SELECT * FROM role;
